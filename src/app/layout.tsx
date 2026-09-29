@@ -1,31 +1,22 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Instrument_Sans } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-headline",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-});
-
-const instrumentSans = Instrument_Sans({
+const montserrat = Montserrat({
   variable: "--font-body",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["200", "300", "400", "500"],
 });
 
 export const metadata: Metadata = {
-  title: "Grupo Pereira dos Reis",
+  title: "APR 360° Capital Group",
   description:
-    "Obra e construção, arquitetura, investimento imobiliário e mediação imobiliária.",
+    "Projetos e construção, mediação imobiliária, investimento imobiliário e capital e financiamento.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="pt"
-      className={`${bricolage.variable} ${instrumentSans.variable}`}
-    >
+    <html lang="pt" className={montserrat.variable}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

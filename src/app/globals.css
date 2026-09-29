@@ -1,34 +1,35 @@
 @import "tailwindcss";
 
 :root {
-  --bone: #ede9e2;
-  --ink: #1c1917;
-  --ink-soft: #6e665c;
-  --line: #d6d0c4;
-  --bronze: #9c7c52;
+  --black: #0b0b0a;
+  --bone: #f2ede4;
+  --ink: #16140f;
+  --gold: #c2a57a;
+  --gold-light: #e3cfa9;
+  --gold-dark: #8a6d45;
 }
 
 @theme inline {
+  --color-black: var(--black);
   --color-bone: var(--bone);
   --color-ink: var(--ink);
-  --color-ink-soft: var(--ink-soft);
-  --color-line: var(--line);
-  --color-bronze: var(--bronze);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
   --font-sans: var(--font-body);
-  --font-display: var(--font-headline);
 }
 
 body {
-  background: var(--bone);
-  color: var(--ink);
+  background: var(--black);
+  color: var(--bone);
 }
 
-.no-scrollbar {
-  scrollbar-width: none;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
+/* Dourado champanhe com brilho, como o lettering da referência. */
+.text-gold-sheen {
+  background: linear-gradient(100deg, #8a6d45 0%, #e3cfa9 35%, #c2a57a 60%, #f0e2c4 80%, #9c7c52 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 @keyframes ken-burns {
@@ -36,30 +37,16 @@ body {
     transform: scale(1) translate3d(0, 0, 0);
   }
   to {
-    transform: scale(1.12) translate3d(-1%, -1%, 0);
+    transform: scale(1.08) translate3d(-1%, -1%, 0);
   }
 }
 
 .ken-burns {
-  animation: ken-burns 20s ease-in-out infinite alternate;
-}
-
-@keyframes marquee {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee-track {
-  animation: marquee 26s linear infinite;
+  animation: ken-burns 28s ease-in-out infinite alternate;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ken-burns,
-  .marquee-track {
+  .ken-burns {
     animation: none;
   }
 }
